@@ -22,17 +22,17 @@ class HeroSection extends StatelessWidget {
       child: Expanded(
         child: Container(
           color: Colors.black.withOpacity(.7),
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           alignment: Alignment.center,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Automate, Organize & Redefine',
+                    'Empowering Growth, Cultivating Success',
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.displayLarge!.copyWith(
                           color: Colors.white,

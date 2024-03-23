@@ -13,10 +13,12 @@ class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 40,
       child: Container(
+        height: 80,
+        color: Colors.black12,
         width: width,
-        padding: EdgeInsets.symmetric(horizontal: width * .06),
+        padding: EdgeInsets.symmetric(horizontal: width * .06, vertical: 0),
+        alignment: Alignment.bottomCenter,
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
