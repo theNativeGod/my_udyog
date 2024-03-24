@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class LogoText extends StatelessWidget {
-  const LogoText({
+  LogoText({
+    this.isBlack,
     super.key,
   });
+
+  bool? isBlack;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +17,9 @@ class LogoText extends StatelessWidget {
       ),
       Text(
         'MyUdyog',
-        style: Theme.of(context)
-            .textTheme
-            .titleMedium!
-            .copyWith(color: Colors.white, fontWeight: FontWeight.w600),
+        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+            color: isBlack == true ? Colors.black : Colors.white,
+            fontWeight: FontWeight.w600),
       )
     ]);
   }

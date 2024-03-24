@@ -19,12 +19,12 @@ class Navbar extends StatelessWidget {
         width: width,
         padding: EdgeInsets.symmetric(horizontal: width * .06, vertical: 0),
         alignment: Alignment.bottomCenter,
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             LogoText(),
-            NavMenu(),
+            const NavMenu(),
           ],
         ),
       ),

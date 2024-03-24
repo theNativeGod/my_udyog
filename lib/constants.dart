@@ -68,3 +68,15 @@ Map<String, List<String>> plans = {
     'Infinite team incorporation (upto 10)',
   ],
 };
+
+List<String> navMenu = [
+  'Features',
+  'Market Price',
+  'Plans',
+  'Download App',
+];
+
+List<String> contactUs = [
+  '+9876543210',
+  '221B Baker Street, Mumbai - 400 001.',
+];
