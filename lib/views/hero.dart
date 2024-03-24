@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_udyog/view_models/scroll_provider.dart';
+import 'package:provider/provider.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -8,6 +10,7 @@ class HeroSection extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     double width = size.width;
     double height = size.height;
+    var scrollProvider = Provider.of<ScrollProvider>(context);
     return Container(
       height: height,
       width: width,
@@ -53,7 +56,12 @@ class HeroSection extends StatelessWidget {
                 ],
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Scrollable.ensureVisible(
+                      scrollProvider.featureKey.currentContext!,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut);
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),

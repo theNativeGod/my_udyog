@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:my_udyog/view_models/scroll_provider.dart';
+import 'package:provider/provider.dart';
+
 List<String> brandFeatureHeadings = [
   'Community Building',
   '24*7 Business Opportunities',
@@ -74,6 +78,41 @@ List<String> navMenu = [
   'Market Price',
   'Plans',
   'Download App',
+];
+
+List<Function> navFunc = [
+  (context) {
+    var scrollProvider = Provider.of<ScrollProvider>(context);
+    Scrollable.ensureVisible(
+      scrollProvider.featureKey.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  },
+  (context) {
+    var scrollProvider = Provider.of<ScrollProvider>(context);
+    Scrollable.ensureVisible(
+      scrollProvider.marketKey.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  },
+  (context) {
+    var scrollProvider = Provider.of<ScrollProvider>(context);
+    Scrollable.ensureVisible(
+      scrollProvider.plansKey.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  },
+  (context) {
+    var scrollProvider = Provider.of<ScrollProvider>(context);
+    Scrollable.ensureVisible(
+      scrollProvider.downloadKey.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  },
 ];
 
 List<String> contactUs = [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_udyog/view_models/feature_provider.dart';
+import 'package:my_udyog/view_models/scroll_provider.dart';
 import 'package:my_udyog/views/main_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (ctx) => FeatureProvider()),
+        ChangeNotifierProvider(create: (ctx) => ScrollProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
