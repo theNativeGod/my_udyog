@@ -13,6 +13,8 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var scrollProvider = Provider.of<ScrollProvider>(context);
+    Size size = MediaQuery.of(context).size;
+    double width = size.width;
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -25,12 +27,16 @@ class FooterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            runAlignment: WrapAlignment.spaceBetween,
+            spacing: (width - 120 - 200 * 4) / 4,
+
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                width: 220,
+                width: 200,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -150,35 +156,39 @@ class FooterMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          headingText,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: const Color(0xff003F88),
-                fontWeight: FontWeight.w600,
-              ),
-        ),
-        const SizedBox(height: 20),
-        ...menus
-            .map((e) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InkWell(
-                      onTap: () => onTap(e),
-                      child: Text(
-                        e,
-                        style: const TextStyle(color: Color(0xff003F88)),
+    double width = MediaQuery.of(context).size.width;
+    return SizedBox(
+      width: width < 700 ? 160 : 200,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            headingText,
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  color: const Color(0xff003F88),
+                  fontWeight: FontWeight.w600,
+                ),
+          ),
+          const SizedBox(height: 20),
+          ...menus
+              .map((e) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        onTap: () => onTap(e),
+                        child: Text(
+                          e,
+                          style: const TextStyle(color: Color(0xff003F88)),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                  ],
-                ))
-            .toList(),
-      ],
+                      const SizedBox(
+                        height: 16,
+                      ),
+                    ],
+                  ))
+              .toList(),
+        ],
+      ),
     );
   }
 }
